@@ -21,9 +21,3 @@ jobs:
 
             - name: Install dependencies
               run:  php7.3 /usr/bin/composer install --prefer-dist --no-progress --no-suggest
-
-            - name: Run PHPStan
-              run:  php7.3 /usr/bin/composer phpstan
-
-            - name: Run PHPUnit
-              run:  php7.3 /usr/bin/composer phpunit
