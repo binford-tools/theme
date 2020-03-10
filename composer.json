@@ -1,7 +1,7 @@
 {
-    "name":        "binford-tools/module",
-    "description": "A template for custom Magento 2 modules.",
-    "type":        "magento2-module",
+    "name":        "binford-tools/theme",
+    "description": "Provides common frontend customizations for Binford® Tools.",
+    "type":        "magento2-theme",
     "license":     "MIT",
     "repositories":
     {
@@ -13,8 +13,9 @@
     },
     "require":
     {
-        "php":               "^7.3",
-        "magento/framework": "^102.0"
+        "php":                         "^7.3",
+        "magento/framework":           "^102.0",
+        "magento/theme-frontend-luma": "^100.3"
     },
     "autoload":
     {
