@@ -15,6 +15,7 @@
     {
         "php":                         "^7.3",
         "magento/framework":           "^102.0",
+        "magento/module-theme":        "^101.0",
         "magento/theme-frontend-luma": "^100.3"
     },
     "autoload":
