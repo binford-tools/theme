@@ -1,0 +1,54 @@
+{
+    "name":        "binford-tools/module",
+    "description": "A template for custom Magento 2 modules.",
+    "type":        "magento2-module",
+    "license":     "MIT",
+    "repositories":
+    {
+        "repo.magento.com":
+        {
+            "type": "composer",
+            "url":  "https://repo.magento.com/"
+        }
+    },
+    "require":
+    {
+        "php":               "^7.3",
+        "magento/framework": "^102.0"
+    },
+    "require-dev":
+    {
+        "phpstan/extension-installer": "^1.0",
+        "phpstan/phpstan":             "^0.11",
+        "phpstan/phpstan-phpunit":     "^0.11",
+        "phpunit/phpunit":             "^9.0"
+    },
+    "autoload":
+    {
+        "files":
+        [
+            "registration.php"
+        ],
+        "psr-4":
+        {
+            "Binford\\Module\\": "src"
+        }
+    },
+    "autoload-dev":
+    {
+        "psr-4":
+        {
+            "Binford\\Module\\Tests\\Unit\\": "tests/unit"
+        }
+    },
+    "scripts":
+    {
+        "test":
+        [
+            "@phpstan",
+            "@phpunit"
+        ],
+        "phpstan": "phpstan analyse",
+        "phpunit": "phpunit --no-coverage"
+    }
+}

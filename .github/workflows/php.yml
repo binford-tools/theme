@@ -1,0 +1,29 @@
+name: PHP Composer
+
+on:
+    push:
+        branches: [ master ]
+    pull_request:
+        branches: [ master ]
+
+jobs:
+    build:
+
+        runs-on: ubuntu-latest
+        env:
+            COMPOSER_AUTH: ${{ secrets.COMPOSER_AUTH }}
+
+        steps:
+            - uses: actions/checkout@v2
+
+            - name: Validate composer.json and composer.lock
+              run:  php7.3 /usr/bin/composer validate
+
+            - name: Install dependencies
+              run:  php7.3 /usr/bin/composer install --prefer-dist --no-progress --no-suggest
+
+            - name: Run PHPStan
+              run:  php7.3 /usr/bin/composer phpstan
+
+            - name: Run PHPUnit
+              run:  php7.3 /usr/bin/composer phpunit
